@@ -39,7 +39,7 @@ request(abcdef)
         _G.trackT = 'Tech Coins'
         _G.trackh = 'Halloween Candy'
 
-        local waitTime = 60
+        local waitTime = 120
         local currentTime = 0
         local startc; local endc; local coin; local difc; local tablec = {};
         local startd; local endd; local diamondc; local difd; local tabled = {};
@@ -115,7 +115,7 @@ request(abcdef)
             initialvalue()
             start()
         print("Sending Webhook In 60 Seconds....")
-            wait(60)
+            wait(120)
         
             currentTime = currentTime + waitTime
         
