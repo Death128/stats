@@ -37,6 +37,7 @@ request(abcdef)
         _G.trackD = 'Diamonds'
         _G.trackC = 'Coins'
         _G.trackT = 'Tech Coins'
+       
 
         local waitTime = 60
         local currentTime = 0
@@ -44,6 +45,7 @@ request(abcdef)
         local startd; local endd; local diamondc; local difd; local tabled = {};
         local startfc; local endfc; local fantasyc; local diffc; local tablefc = {};
         local startT; local endT; local tech; local dift; local tablet = {};
+        
         
         local function add(table)
             local value = 0
@@ -63,8 +65,8 @@ request(abcdef)
             return formatted
         end
         local username = game:GetService("Players").LocalPlayer.Name
-        local egg1 = 120000
-        local egg2 = 750000
+        local egg1 = 2970000000
+        local egg2 = 330000000
 
  
         
@@ -73,22 +75,23 @@ request(abcdef)
             startd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
             startc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
             startT = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackT].Amount.Text, ",", "")
-            startH = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackh].Amount.Text, ",", "")
+            
         end
         local function ending()
             endfc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.Tracking].Amount.Text, ",", "")
             endd = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackD].Amount.Text, ",", "")
             endc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackC].Amount.Text, ",", "")
             endT = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackT].Amount.Text, ",", "")
-            endh = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right[_G.trackh].Amount.Text, ",", "") 
+             
         end
         local function initialvalue()
             coin = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Coins.Amount.Text, ",", "")
             diamondc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, ",", "")
             fantasyc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right["Fantasy Coins"].Amount.Text, ",", "")
             tech = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right["Tech Coins"].Amount.Text, ",", "")
-            costofegg2 = candy / egg1
-            costofegg = candy / egg2
+           
+            costofegg2 = tech / egg1
+            costofegg = tech / egg2
             enchants = diamondc / 10000
             rank = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Rank.RankName.Text, ",", "")
         end
@@ -97,13 +100,13 @@ request(abcdef)
             difd = tonumber(endd) - tonumber(startd)
             difc = tonumber(endc) - tonumber(startc)
             dift = tonumber(endT) - tonumber(startT) 
-            difh = tonumber(endh) - tonumber(startH)
+         
 
             table.insert(tablec, difc)
             table.insert(tabled, difd)
             table.insert(tablefc, diffc)
             table.insert(tablet, dift)
-            table.insert(tableh, difh)
+           
         end
 
         while not _G.stop do
@@ -167,12 +170,12 @@ request(abcdef)
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Cursed Egg__",
+                        ["name"] = "__Planet Egg__",
                         ["value"] = ("%s"):format(comma_Value(math.round(costofegg))),
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Eerie Egg__",
+                        ["name"] = "__Golden Planet Egg__",
                         ["value"] = ("%s"):format(comma_Value(math.round(costofegg2))),
                         ["inline"] = false
                     },
