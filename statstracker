@@ -37,7 +37,6 @@ request(abcdef)
         _G.trackD = 'Diamonds'
         _G.trackC = 'Coins'
         _G.trackT = 'Tech Coins'
-        _G.trackh = 'Halloween Candy'
 
         local waitTime = 60
         local currentTime = 0
@@ -45,7 +44,6 @@ request(abcdef)
         local startd; local endd; local diamondc; local difd; local tabled = {};
         local startfc; local endfc; local fantasyc; local diffc; local tablefc = {};
         local startT; local endT; local tech; local dift; local tablet = {};
-        local startH; local endh; local candy; local difh; local tableh = {};
         
         local function add(table)
             local value = 0
@@ -89,7 +87,6 @@ request(abcdef)
             diamondc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right.Diamonds.Amount.Text, ",", "")
             fantasyc = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right["Fantasy Coins"].Amount.Text, ",", "")
             tech = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right["Tech Coins"].Amount.Text, ",", "")
-            candy = string.gsub(game.Players.LocalPlayer.PlayerGui.Main.Right["Halloween Candy"].Amount.Text, ",", "")
             costofegg2 = candy / egg1
             costofegg = candy / egg2
             enchants = diamondc / 10000
@@ -150,11 +147,6 @@ request(abcdef)
                         ["inline"] = false
                     },
                     {
-                        ["name"] = "__Halloween Candy__",
-                        ["value"] = ("%s"):format(comma_Value(candy)),
-                        ["inline"] = false
-                    },
-                    {
                         ["name"] = "__Tech Coins__",
                         ["value"] = ("%s"):format(comma_Value(endT)),
                         ["inline"] = false
@@ -191,28 +183,6 @@ request(abcdef)
                     }
                 },
             },
-            {
-                ["title"] = "__**Halloween Candy**__",
-                ["type"] = "rich",
-                ["color"] = tonumber(0x663399),
-                ["fields"] = {
-                    {
-                        ["name"] = "__Halloween Candy Earned In The Last Minute__",
-                        ["value"] = comma_Value(difh),
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = ("__Total Halloween Candy This %s Minute Session__"):format(math.round(currentTime/60)),
-                        ["value"] = comma_Value(add(tableh)),
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "__Average Halloween Candy Per Minute__",
-                        ["value"] = comma_Value(math.round(add(tableh) / math.round(currentTime/60))),
-                        ["inline"] = false
-                    }
-                },
-            }, 
             {
                 ["title"] = "__**Diamonds**__",
                 ["type"] = "rich",
